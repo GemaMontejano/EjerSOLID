@@ -11,7 +11,10 @@ public class Colores implements ILogica {
 
 	}
 
-
+//Lo he implementado en id. Utilizando interfaces y clases.
+//Aunque sería más largo porque es el que cumple con más principios SOLID, solo tenemos que crear una clase nueva, que implementa la interfaz ilogica.
+// Si tuviera que hacer todo de cero, a priori es la que tiene más trabajo, aunque supongo que en cosas mucho más complicadas, será más fácil si hay que crear métodos nuevos.
+//Si tuviera que hacerlo entero, me resultaría más cómodo quizá, hacerlo como en ppt para este ejemplo sencillo.
 	@Override
 	public int comprobar(String jugada1, String jugada2) {
 		int pos1 = Arrays.asList(jugadas).indexOf(jugada1.toLowerCase());
