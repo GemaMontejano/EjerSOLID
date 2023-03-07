@@ -1,0 +1,33 @@
+package com.trifulcas.id;
+
+public class Torneo {
+
+	private int vecesJugadas;
+	private int ganarEva;
+	private int ganarJuan;
+	private int empates;
+
+	public Torneo(int vecesJugadas) {
+		this.vecesJugadas = vecesJugadas;
+	}
+
+	public void jugar() {
+		for (int i = 0; i < vecesJugadas; i++) {
+			Jugador eva = new Jugador("Eva", new CPU());
+			Jugador juan = new Jugador("Juan", new CPU());
+
+			Juego juego = new Juego(eva, juan, new Colores());
+			String ganador = juego.jugar();
+			if (ganador.equals("Eva")) {
+				ganarEva++;
+			} else if (ganador.equals("Juan")) {
+				ganarJuan++;
+			} else {
+				empates++;
+			}
+		}
+		System.out.println("Eva ha ganado " + ganarEva + " veces");
+		System.out.println("Juan ha ganado " + ganarJuan + " veces");
+		System.out.println("Han habido " + empates + " empates");
+	}
+}
